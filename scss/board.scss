@@ -1,0 +1,201 @@
+@import "vars";
+@import "mixin";
+
+.form {
+  margin: 100px 0;
+  .inner {
+    display: flex;
+    border-bottom: 1px solid #ccc;
+    &.agree {
+      border-bottom: none;
+      margin-top: 50px;
+      dd {
+        padding: 20px 0;
+        display: flex;
+        justify-content: center;
+        button {
+          background: none;
+          border: none;
+          font-family: inherit;
+          font-size: 16px;
+          padding-bottom: 5px;
+          border-bottom: 1px solid #ccc;
+          font-weight: 500;
+        }
+      }
+    }
+    dl {
+      display: flex;
+      align-items: center;
+      padding: 10px 0;
+      width: 100%;
+      &.textarea {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: stretch;
+        dd {
+          padding: 0 20px;
+        }
+        textarea {
+          width: 100%;
+          border: 1px solid #ccc;
+          padding: 20px;
+          height: 200px;
+          resize: none;
+          line-height: 1.5;
+          font-family: inherit;
+          font-size: 15px;
+        }
+      }
+      &.required {
+        dt:after {
+          content: "*";
+          display: inline-block;
+          color: $main-color;
+          margin-left: 10px;
+        }
+      }
+      &.w50 {
+        width: 50%;
+        display: inline-flex;
+      }
+      dt {
+        width: 180px;
+        padding: 20px;
+        box-sizing: border-box;
+      }
+      dd {
+        display: flex;
+        width: calc(100% - 180px);
+        position: relative;
+        .label {
+          margin-right: 20px;
+        }
+      }
+    }
+  }
+  .label {
+    &.text,
+    &.selectBox {
+      width: 100%;
+      font-size: 0;
+    }
+    input[type="radio"],
+    input[type="checkbox"] {
+      position: absolute;
+      padding: 0;
+      border: 0;
+      width: 0;
+      height: 0;
+      overflow: hidden;
+    }
+    span {
+      display: flex;
+      align-items: center;
+    }
+    &.radio {
+      span:before {
+        @include icon("noise_control_off", 0);
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: rgba(255, 255, 255, 0.5);
+        font-size: 24px;
+        width: 25px;
+        height: 25px;
+        overflow: hidden;
+        background-color: $main-color;
+        border-radius: 100px;
+        box-sizing: border-box;
+        margin-right: 10px;
+      }
+      input:checked ~ span:before {
+        color: rgba(255, 255, 255, 1);
+        @include longShadow(darken($main-color, 10), 30);
+      }
+    }
+    &.checkbox {
+      span:before {
+        @include icon("done", 0);
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: rgba(255, 255, 255, 0.5);
+        font-size: 24px;
+        width: 25px;
+        height: 25px;
+        overflow: hidden;
+        background-color: $main-color;
+        border-radius: 3px;
+        box-sizing: border-box;
+        margin-right: 10px;
+      }
+      input:checked ~ span:before {
+        color: rgba(255, 255, 255, 1);
+        @include longShadow(darken($main-color, 10), 30);
+      }
+    }
+    input[type="text"],
+    select {
+      height: 50px;
+      width: 100%;
+      border: 1px solid #ccc;
+      padding: 0 15px;
+      width: 100%;
+      box-sizing: border-box;
+      //display inlin-block
+      //좌우 여백 4px을 가진다.
+      &.harf {
+        width: calc(50% - 5px);
+        margin-right: 10px;
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+  .abs {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translate(120%, -50%);
+  }
+  button {
+    cursor: pointer;
+  }
+}
+
+.fileBox {
+  width: 100%;
+  display: flex;
+  margin-right: 20px;
+  label {
+    width: 100px;
+    height: 50px;
+    background-color: $main-color;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    margin-left: 10px;
+  }
+  input[type="file"] {
+    width: 0;
+    height: 0;
+    position: absolute;
+    overflow: hidden;
+    padding: 0;
+    border: none;
+  }
+  input[type="text"] {
+    height: 50px;
+    width: calc(100% - 110px);
+    border: 1px solid #ccc;
+    padding: 0 15px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+}

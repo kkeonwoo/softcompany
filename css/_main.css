@@ -1,0 +1,92 @@
+#mainVisual {
+  width: 100%;
+  overflow: hidden;
+  margin-top: 100px;
+  position: relative;
+}
+#mainVisual ul li {
+  /*  viewport height */
+  height: calc(100vh - 100px);
+  color: #fff;
+  position: relative;
+}
+#mainVisual ul .visual01 {
+  background-image: url(../images/main/visual01.jpg);
+}
+#mainVisual ul .visual02 {
+  background-image: url(../images/main/visual02.jpg);
+}
+#mainVisual ul .visual03 {
+  background-image: url(../images/main/visual03.jpg);
+}
+#mainVisual ul li::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+#mainVisual ul li .txtBox {
+  width: 1280px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin: 0 auto;
+  z-index: 2;
+  position: relative;
+}
+#mainVisual ul li .txtBox .headTXT {
+  font: size 24px;
+  border-bottom: 1px solid #fff;
+  display: inline-block;
+  padding-bottom: 10px;
+}
+#mainVisual ul li .txtBox h2 {
+  font-size: 42px;
+  font-weight: 700;
+  line-height: 1.5;
+  margin: 20px 0;
+}
+#mainVisual ul li .txtBox .descTXT {
+  font-size: 18px;
+}
+#mainVisual ul li .txtBox a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 180px;
+  height: 60px;
+  border: 2px solid #fff;
+  border-radius: 100px;
+  margin-top: 50px;
+  transition: all o.25s ease;
+}
+#mainVisual ul li .txtBox a:hover {
+  background-color: #fff;
+  color: #111;
+}
+#mainVisual button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  color: #fff;
+  background: none;
+  border: none;
+  width: 80px;
+  height: 80px;
+  border: 1px solid #fff;
+}
+#mainVisual button .material-icons {
+  font-size: 48px;
+}
+#mainVisual .prev {
+  left: 50px;
+}
+#mainVisual .next {
+  right: 50px;
+}

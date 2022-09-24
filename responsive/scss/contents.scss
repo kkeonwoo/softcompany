@@ -1,0 +1,167 @@
+@import "vars";
+@import "mixin";
+
+.subVisual {
+  background-color: $sub-Visual-color;
+  .container {
+    height: 700px;
+    position: relative;
+  }
+  .contentsBox {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 700px;
+    .subTitleBox {
+      .subTitle {
+        font-size: $font-large;
+        font-weight: 700;
+        line-height: 1.2;
+        margin-bottom: 20px;
+      }
+      p {
+        color: #333;
+        line-height: 1.8;
+      }
+    }
+    .imgBox {
+      width: 740px;
+      height: 500px;
+      position: relative;
+      img {
+        position: absolute;
+      }
+    }
+  }
+}
+
+#subVisual01 {
+  .contentsBox .imgBox {
+    img {
+      &:nth-child(1) {
+        left: 200px;
+      }
+      &:nth-child(2) {
+        left: 0;
+        top: 120px;
+      }
+      &:nth-child(3) {
+        left: 60px;
+        top: 250px;
+      }
+      &:nth-child(4) {
+        right: 0;
+        top: 120px;
+      }
+    }
+  }
+}
+#lnb {
+  position: absolute;
+  background-color: #fff;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  .depth02 {
+    display: flex;
+    li {
+      flex-basis: 25%;
+      border: 1px solid #ccc;
+      &:not(:nth-child(1)) {
+        border-left: none;
+      }
+      &.active {
+        background-color: $main-color;
+        border-color: $main-color;
+        color: #fff;
+      }
+      a {
+        display: flex;
+        height: 70px;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+  .depth03 {
+    display: none;
+  }
+}
+.breadCrumb {
+  position: relative;
+  z-index: 2;
+  .container {
+    display: flex;
+    border-bottom: 1px solid #ccc;
+    padding: 20px 0;
+    > a {
+      position: relative;
+      &::after {
+        @include pseudo;
+        @include box(1px, 15px, #ccc);
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+    .home {
+      display: flex;
+      width: 50px;
+      height: 50px;
+      text-indent: -999px;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      &::before {
+        text-indent: 0;
+        font-size: 24;
+        @include icon("home", 0);
+      }
+    }
+    .lnb01 {
+      padding: 0 20px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+    }
+    .lnb02 {
+      &:hover {
+        .depth02 {
+          pointer-events: auto;
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      button {
+        padding: 0 20px;
+        background: none;
+        border: none;
+        display: flex;
+        height: 50px;
+        align-items: center;
+        font-size: 16px;
+        font-family: "Noto Sans KR";
+      }
+      .depth02 {
+        padding: 15px;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        width: 150px;
+        box-sizing: 5px 5px 5px rgba(0, 0, 0, 0.1);
+        position: absolute;
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(50px);
+        transition: all 0.25s ease-in-out;
+        a {
+          display: block;
+          padding: 5px 0;
+        }
+        .depth03 {
+          display: none;
+        }
+      }
+    }
+  }
+}

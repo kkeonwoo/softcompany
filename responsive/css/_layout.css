@@ -1,0 +1,155 @@
+/* @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Roboto:wght@100;300;400;500;700;900&display=swap"); */
+
+/* 
+  질문할때 옆에 먹을거 놔두면 상냥하게 답변 해줌...
+  참고로 마이쮸, 멘토스 종류 좋아라함.... 
+*/
+
+body {
+  font-family: "Roboto", "Noto Sans KR", sans-serif;
+  font-size: 16px;
+  min-height: 2000px;
+}
+/* a태그는 컬러를 부모로부터 상속받지 않는다. 만약 상속을 강제로 받게 할려면 inherit을 쓰면 된다. 아니면 컬러를 재정의 한다. */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+/* block (div,p,h,header,nav,footer,ul,ol,dl,li 등등) */
+/* inline (a,em,strong,i,b,span) 자기 컨텐츠만큼만 넓이 높이를 가진다. */
+/* fhd (1920) */
+#header {
+  /* border-bottom: 1px solid #ccc; */
+  width: 100%;
+  /* position: fixed; */
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  height: 100px;
+  overflow: hidden;
+  transition: height 0.5s cubic-bezier(0.87, -0.36, 0.18, 1.39);
+  /* transition-property: height;
+  transition-duration: 0.5s;
+  transition-timing-function: cubic-bezier(0.87,-0.36, 0.18, 1.39); */
+  /* transition-duration: 500ms;  */
+  /* transition-delay: 500ms; */
+  position: fixed;
+  background-color: #fff;
+  top: 0;
+  z-index: 99;
+}
+#header:after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1px;
+  background-color: #ccc;
+  position: absolute;
+  top: 100px;
+}
+
+#header:hover {
+  height: 450px;
+}
+
+/* 가상(pseudo selector) */
+
+#header .container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  margin: 0 auto;
+  /* margin:100px;  상/우/하/좌 */
+  /* margin:100px 50px;  상하 100px 좌우 50px */
+  /* margin:100px 50px 30px;  상 100px 좌우 50px 하 30px; */
+  /* margin:100px 50px 30px 20px;  상 100px 우 50px 하 30px 좌 20px; */
+}
+/* inline,block,inline-block,flex, none */
+#logo {
+  display: flex;
+  align-items: center;
+  height: 100px;
+}
+
+#gnb .list {
+  display: flex;
+}
+#gnb h2 {
+  display: none;
+}
+#gnb .list .depth01 {
+  font-size: 18px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding: 0 30px;
+  height: 100px;
+  position: relative;
+  transition-property: color;
+  transition-duration: 500ms;
+}
+#gnb .list .depth01:after {
+  content: "";
+  display: block;
+
+  background-color: #f00;
+  position: absolute;
+  left: 30px;
+  right: 30px;
+  bottom: 0;
+  height: 2px;
+  transform: scaleX(0);
+  transition: transform 0.25s ease-in-out;
+}
+#gnb .list .depth01:hover {
+  color: #f00;
+}
+#gnb .list .depth01:hover:after {
+  transform: scaleX(1);
+}
+#gnb .list .depth02 {
+  padding-top: 30px;
+  padding-left: 30px;
+  color: #666;
+}
+#gnb .list .depth02 li {
+  margin-top: 10px;
+}
+#gnb .list .depth02 .depth03 {
+  font-size: 14px;
+
+  /* margin-top: 20px;
+  margin-bottom: 20px; */
+  margin: 20px 0;
+}
+#gnb .list .depth02 .depth03 li {
+  display: flex;
+  align-items: center;
+}
+#gnb .list .depth02 .depth03 li:before {
+  /* css에서 만드는 element */
+  content: "";
+  display: block;
+  width: 4px;
+  height: 4px;
+  background-color: #f00;
+  /* border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px; */
+
+  border-radius: 2px;
+
+  margin-right: 5px;
+}
+
+/* block을 옆으로 나란히 배치하는 방법 */
+
+/* class  (類) */
+/* style 1000;
+id 100
+class 10
+tag 1 */
