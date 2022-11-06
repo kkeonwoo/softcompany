@@ -132,15 +132,6 @@
         background-image: url("../images/main/visual0#{$i}.jpg");
       }
     }
-    // &.visual01 {
-    //   background-image: url("../images/main/visual01.jpg");
-    // }
-    // &.visual02 {
-    //   background-image: url("../images/main/visual02.jpg");
-    // }
-    // &.visual03 {
-    //   background-image: url("../images/main/visual03.jpg");
-    // }
     .txtBox {
       width: 1280px;
       height: 100%;
@@ -253,7 +244,7 @@
   ul {
     li {
       width: 300px;
-      //border: 1px solid #000;
+      border: 1px solid #ccc;
       border-radius: 15px;
       overflow: hidden;
       &:hover {
@@ -279,7 +270,6 @@
           width: 100%;
           height: 100%;
           left: 0;
-          top: 0;
           background-color: rgba($main-color, 0.8);
           color: #fff;
           padding-left: 20px;
@@ -316,8 +306,7 @@
         }
       }
       .txtBox {
-        border: 1px solid #ccc;
-        border-top: none;
+        border-top: 1px solid #ccc;
         padding: 20px;
         text-align: center;
         border-radius: 0 0 15px 15px;
@@ -382,7 +371,6 @@
       background: none;
       text-align: center;
       opacity: 1;
-
       &:before {
         content: "";
         display: block;
@@ -411,55 +399,6 @@
           }
         }
       }
-      // &:nth-child(1):before {
-      //   background-image: url("../images/main/service_icon01.png");
-      // }
-      // &:nth-child(2):before {
-      //   background-image: url("../images/main/service_icon02.png");
-      // }
-      // &:nth-child(3):before {
-      //   background-image: url("../images/main/service_icon03.png");
-      // }
-      // &:nth-child(4):before {
-      //   background-image: url("../images/main/service_icon04.png");
-      // }
-      // &:nth-child(5):before {
-      //   background-image: url("../images/main/service_icon05.png");
-      // }
-      // &:nth-child(6):before {
-      //   background-image: url("../images/main/service_icon06.png");
-      // }
-
-      // &:nth-child(1) {
-      //   &.swiper-pagination-bullet-active:before {
-      //     background-image: url("../images/main/service_icon01_up.png");
-      //   }
-      // }
-      // &:nth-child(2) {
-      //   &.swiper-pagination-bullet-active:before {
-      //     background-image: url("../images/main/service_icon02_up.png");
-      //   }
-      // }
-      // &:nth-child(3) {
-      //   &.swiper-pagination-bullet-active:before {
-      //     background-image: url("../images/main/service_icon03_up.png");
-      //   }
-      // }
-      // &:nth-child(4) {
-      //   &.swiper-pagination-bullet-active:before {
-      //     background-image: url("../images/main/service_icon04_up.png");
-      //   }
-      // }
-      // &:nth-child(5) {
-      //   &.swiper-pagination-bullet-active:before {
-      //     background-image: url("../images/main/service_icon05_up.png");
-      //   }
-      // }
-      // &:nth-child(6) {
-      //   &.swiper-pagination-bullet-active:before {
-      //     background-image: url("../images/main/service_icon06_up.png");
-      //   }
-      // }
     }
   }
   .rolling {
