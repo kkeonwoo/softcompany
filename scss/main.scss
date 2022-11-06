@@ -195,15 +195,9 @@
     font-size: $font-medium;
     &.prev {
       left: 50px;
-      &::before {
-        @include icon("prev", 0);
-      }
     }
     &.next {
       right: 50px;
-      &::before {
-        @include icon("next", 0);
-      }
     }
   }
   .pagination {

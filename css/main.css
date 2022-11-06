@@ -186,20 +186,8 @@
 #mainVisual .btn.prev {
   left: 50px;
 }
-#mainVisual .btn.prev::before {
-  font-family: "Material Icons Outlined";
-  content: "prev";
-  display: inline-block;
-  margin-left: 0;
-}
 #mainVisual .btn.next {
   right: 50px;
-}
-#mainVisual .btn.next::before {
-  font-family: "Material Icons Outlined";
-  content: "next";
-  display: inline-block;
-  margin-left: 0;
 }
 #mainVisual .pagination {
   position: absolute;
@@ -845,8 +833,19 @@ svg#freepik_stories-insert-block:not(.animated) .animable {
 }
 
 svg#freepik_stories-insert-block.animated #freepik--Character--inject-221 {
-  animation: 1s 1 forwards ease-in fadeIn, 3s Infinite linear heartbeat;
-  animation-delay: 0s, 2s;
+  -webkit-animation: 1s 1 forwards ease-in fadeIn, 3s Infinite linear heartbeat;
+          animation: 1s 1 forwards ease-in fadeIn, 3s Infinite linear heartbeat;
+  -webkit-animation-delay: 0s, 2s;
+          animation-delay: 0s, 2s;
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 @keyframes fadeIn {
@@ -855,6 +854,29 @@ svg#freepik_stories-insert-block.animated #freepik--Character--inject-221 {
   }
   100% {
     opacity: 1;
+  }
+}
+@-webkit-keyframes heartbeat {
+  0% {
+    transform: scale(1);
+  }
+  10% {
+    transform: scale(1.1);
+  }
+  30% {
+    transform: scale(1);
+  }
+  40% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  60% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1);
   }
 }
 @keyframes heartbeat {
